@@ -6,8 +6,8 @@ By participating, you agree to follow the [Code of Conduct](CODE_OF_CONDUCT.md).
 
 ## Ways to contribute
 
-- **Report a bug**, such as a wrong calculation or a broken formula, or **suggest an improvement** with the [issue forms](https://github.com/BnRomain/PowerLiftingTracker/issues/new/choose).
-- **Ask a question or share your results** in [GitHub Discussions](https://github.com/BnRomain/PowerLiftingTracker/discussions).
+- **Report a bug**, such as a wrong calculation or a broken formula, or **suggest an improvement** with the [issue forms](https://github.com/BnRomain/tracker-powerlifting/issues/new/choose).
+- **Ask a question or share your results** in [GitHub Discussions](https://github.com/BnRomain/tracker-powerlifting/discussions).
 - **Report a security vulnerability** privately, as described in the [security policy](SECURITY.md). Please do not open a public issue for it.
 - **Open a pull request** for the documentation: README, user guides, translations.
 
@@ -19,7 +19,7 @@ The template lives in Google Drive, not in this repository, so it cannot be chan
 
 1. Make a copy of the [template](https://docs.google.com/spreadsheets/d/1cMEQfgsgYV3C5RC8sq0Xvccz4UgO5aT8dhn19qVybdU/edit?usp=sharing) (File > Make a copy) and apply your change to the copy.
 2. Test it on several weeks, including a missed session, weighted pull-ups or dips and accessory exercises (`ac`).
-3. Open a [feature request](https://github.com/BnRomain/PowerLiftingTracker/issues/new?template=feature_request.yml) or a [bug report](https://github.com/BnRomain/PowerLiftingTracker/issues/new?template=bug_report.yml) with the cells and formulas you changed, and before and after screenshots. A read-only link to your copy makes the review easier.
+3. Open a [feature request](https://github.com/BnRomain/tracker-powerlifting/issues/new?template=feature_request.yml) or a [bug report](https://github.com/BnRomain/tracker-powerlifting/issues/new?template=bug_report.yml) with the cells and formulas you changed, and before and after screenshots. A read-only link to your copy makes the review easier.
 
 Guidelines for formulas:
 
@@ -31,8 +31,8 @@ Guidelines for formulas:
 ## Documentation setup
 
 ```bash
-git clone https://github.com/BnRomain/PowerLiftingTracker.git
-cd PowerLiftingTracker
+git clone https://github.com/BnRomain/tracker-powerlifting.git
+cd tracker-powerlifting
 ```
 
 | Path | Content |
@@ -45,7 +45,7 @@ cd PowerLiftingTracker
 
 - Keep both user guides in sync: a change of usage must be applied to the English and the French guide.
 - Store screenshots in `docs/images/`, with lowercase names separated by hyphens (for example `session-planned.png`).
-- The [wiki](https://github.com/BnRomain/PowerLiftingTracker/wiki) explains how the tracker works and how the repository is automated: update it when the behavior changes.
+- The [wiki](https://github.com/BnRomain/tracker-powerlifting/wiki) explains how the tracker works and how the repository is automated: update it when the behavior changes.
 
 Before opening a pull request, check the documentation the same way as the CI. markdownlint requires [Node.js](https://nodejs.org/), and [lychee](https://lychee.cli.rs/) is a single binary:
 

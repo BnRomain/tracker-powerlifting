@@ -7,7 +7,7 @@ body:
     attributes:
       value: |
         Thanks for taking the time to report a bug.
-        Please do not report security vulnerabilities here: follow the [security policy](https://github.com/BnRomain/PowerLiftingTracker/security/policy) instead.
+        Please do not report security vulnerabilities here: follow the [security policy](https://github.com/BnRomain/tracker-powerlifting/security/policy) instead.
 
   - type: dropdown
     id: component

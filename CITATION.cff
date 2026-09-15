@@ -13,7 +13,7 @@ authors:
     family-names: Ben
 version: 1.0.1
 license: MIT
-repository-code: "https://github.com/BnRomain/PowerLiftingTracker"
+repository-code: "https://github.com/BnRomain/tracker-powerlifting"
 url: "https://docs.google.com/spreadsheets/d/1cMEQfgsgYV3C5RC8sq0Xvccz4UgO5aT8dhn19qVybdU/edit?usp=sharing"
 keywords:
   - powerlifting

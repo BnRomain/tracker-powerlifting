@@ -1,14 +1,14 @@
 # 🏋️ PowerLift Tracker
 
-[![Documentation](https://github.com/BnRomain/PowerLiftingTracker/actions/workflows/docs.yml/badge.svg)](https://github.com/BnRomain/PowerLiftingTracker/actions/workflows/docs.yml)
-[![CodeQL](https://github.com/BnRomain/PowerLiftingTracker/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/BnRomain/PowerLiftingTracker/actions/workflows/github-code-scanning/codeql)
-[![Release](https://img.shields.io/github/v/release/BnRomain/PowerLiftingTracker?sort=semver)](https://github.com/BnRomain/PowerLiftingTracker/releases)
+[![Documentation](https://github.com/BnRomain/tracker-powerlifting/actions/workflows/docs.yml/badge.svg)](https://github.com/BnRomain/tracker-powerlifting/actions/workflows/docs.yml)
+[![CodeQL](https://github.com/BnRomain/tracker-powerlifting/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/BnRomain/tracker-powerlifting/actions/workflows/github-code-scanning/codeql)
+[![Release](https://img.shields.io/github/v/release/BnRomain/tracker-powerlifting?sort=semver)](https://github.com/BnRomain/tracker-powerlifting/releases)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Google Sheets template](https://img.shields.io/badge/Google%20Sheets-template-34A853?logo=googlesheets&logoColor=white)](https://docs.google.com/spreadsheets/d/1cMEQfgsgYV3C5RC8sq0Xvccz4UgO5aT8dhn19qVybdU/edit?usp=sharing)
 
 A powerlifting tracker built on **Google Sheets**. It estimates your e1RM from the RPE chart, plans your loads from it, updates your reference MAXs every week from your actual performance and measures your accumulated fatigue, over a 10-week block.
 
-**[Get the template](https://docs.google.com/spreadsheets/d/1cMEQfgsgYV3C5RC8sq0Xvccz4UgO5aT8dhn19qVybdU/edit?usp=sharing)** · [User guide](docs/user-guide.md) · [Guide d'utilisation (FR)](docs/user-guide-fr.md) · [Wiki](https://github.com/BnRomain/PowerLiftingTracker/wiki)
+**[Get the template](https://docs.google.com/spreadsheets/d/1cMEQfgsgYV3C5RC8sq0Xvccz4UgO5aT8dhn19qVybdU/edit?usp=sharing)** · [User guide](docs/user-guide.md) · [Guide d'utilisation (FR)](docs/user-guide-fr.md) · [Wiki](https://github.com/BnRomain/tracker-powerlifting/wiki)
 
 ## 📸 Preview
 
@@ -154,13 +154,13 @@ From week 2, the MAXs are updated from the average e1RM of the previous week: ju
 
 - **[User guide (English)](docs/user-guide.md)**: setup, RPE chart, sessions, bodyweight exercises, analysis and FAQ
 - **[Guide d'utilisation (French)](docs/user-guide-fr.md)**: the same guide in French
-- **[Wiki](https://github.com/BnRomain/PowerLiftingTracker/wiki)**: project overview, how it works and CI/CD
+- **[Wiki](https://github.com/BnRomain/tracker-powerlifting/wiki)**: project overview, how it works and CI/CD
 - **[Changelog](CHANGELOG.md)**: version history
 
 ## 🗂️ Repository Structure
 
 ```text
-PowerLiftingTracker/
+tracker-powerlifting/
 ├── docs/
 │   ├── user-guide.md         user guide (English)
 │   ├── user-guide-fr.md      user guide (French)
@@ -187,7 +187,7 @@ On every pull request and every push to `main`, GitHub Actions runs:
 
 The `main` branch is protected: every change goes through a pull request and can only be merged once these checks pass. Secret scanning with push protection blocks any committed credential.
 
-Versions follow [Semantic Versioning](https://semver.org/) and are published as [GitHub releases](https://github.com/BnRomain/PowerLiftingTracker/releases): see the [contributing guide](CONTRIBUTING.md#versioning-and-releases).
+Versions follow [Semantic Versioning](https://semver.org/) and are published as [GitHub releases](https://github.com/BnRomain/tracker-powerlifting/releases): see the [contributing guide](CONTRIBUTING.md#versioning-and-releases).
 
 **Dependabot** monitors the GitHub Actions. Patch and minor updates are merged automatically once the required checks of `main` have passed. See also the [security policy](SECURITY.md).
 
@@ -226,7 +226,7 @@ Versions follow [Semantic Versioning](https://semver.org/) and are published as 
 
 ## 🤝 Contributing
 
-Contributions are welcome. Please read the [contributing guide](CONTRIBUTING.md) and the [code of conduct](CODE_OF_CONDUCT.md) before opening an issue or a pull request. Questions and training results are welcome in [Discussions](https://github.com/BnRomain/PowerLiftingTracker/discussions), and security vulnerabilities must be reported privately, as described in the [security policy](SECURITY.md).
+Contributions are welcome. Please read the [contributing guide](CONTRIBUTING.md) and the [code of conduct](CODE_OF_CONDUCT.md) before opening an issue or a pull request. Questions and training results are welcome in [Discussions](https://github.com/BnRomain/tracker-powerlifting/discussions), and security vulnerabilities must be reported privately, as described in the [security policy](SECURITY.md).
 
 ## 📜 License
 

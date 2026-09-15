@@ -14,7 +14,7 @@ Only the latest version is maintained: the Google Sheets template linked in the 
 
 If you discover a security vulnerability in this project, please do not disclose it publicly through a GitHub issue.
 
-Instead, please report it privately to the project maintainer through GitHub's private vulnerability reporting: [report a vulnerability](https://github.com/BnRomain/PowerLiftingTracker/security/advisories/new).
+Instead, please report it privately to the project maintainer through GitHub's private vulnerability reporting: [report a vulnerability](https://github.com/BnRomain/tracker-powerlifting/security/advisories/new).
 
 When reporting a vulnerability, please provide:
 
@@ -31,7 +31,7 @@ This policy applies to the template and to the content of this repository, in pa
 * links in the documentation that point to a malicious or hijacked page;
 * the GitHub Actions workflows and the Dependabot configuration.
 
-A wrong calculation is not a security issue: please report it with the [bug report form](https://github.com/BnRomain/PowerLiftingTracker/issues/new?template=bug_report.yml).
+A wrong calculation is not a security issue: please report it with the [bug report form](https://github.com/BnRomain/tracker-powerlifting/issues/new?template=bug_report.yml).
 
 ## Your Training Data
 

@@ -41,6 +41,6 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 - Multi-sheet architecture (1 week = 1 sheet)
 - README, user guides (French and English) and contribution guidelines
 
-[Unreleased]: https://github.com/BnRomain/PowerLiftingTracker/compare/v1.0.1...HEAD
-[1.0.1]: https://github.com/BnRomain/PowerLiftingTracker/compare/v1.0.0...v1.0.1
-[1.0.0]: https://github.com/BnRomain/PowerLiftingTracker/releases/tag/v1.0.0
+[Unreleased]: https://github.com/BnRomain/tracker-powerlifting/compare/v1.0.1...HEAD
+[1.0.1]: https://github.com/BnRomain/tracker-powerlifting/compare/v1.0.0...v1.0.1
+[1.0.0]: https://github.com/BnRomain/tracker-powerlifting/releases/tag/v1.0.0

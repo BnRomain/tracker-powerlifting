@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
 
     # Only pull requests opened by Dependabot in this repository.
-    if: github.event.pull_request.user.login == 'dependabot[bot]' && github.repository == 'BnRomain/PowerLiftingTracker'
+    if: github.event.pull_request.user.login == 'dependabot[bot]' && github.repository == 'BnRomain/tracker-powerlifting'
 
     steps:
       - name: Dependabot metadata
