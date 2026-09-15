@@ -1,4 +1,6 @@
-# 📘 USER GUIDE - POWERLIFT TRACKER
+# 📘 PowerLift Tracker User Guide
+
+Also available in French: [guide d'utilisation](user-guide-fr.md).
 
 ## 📋 Table of Contents
 
@@ -19,6 +21,7 @@
 Welcome to **PowerLift Tracker**! This system allows you to track your powerlifting progression in an intelligent and automated way.
 
 **What the tool does:**
+
 - Automatically calculates your e1RM (estimated 1 Rep Max)
 - Adjusts your training loads based on your progression
 - Analyzes your fatigue level
@@ -33,38 +36,40 @@ Welcome to **PowerLift Tracker**! This system allows you to track your powerlift
 In the **"MAXs"** section (cells **C3 to C7**), enter your reference e1RM for each main movement:
 
 | Exercise | Cell | Example |
-|----------|------|---------|
+| --- | --- | --- |
 | Squat | C3 | 126 kg |
 | Bench | C4 | 89 kg |
 | Deadlift | C5 | 187 kg |
 | Pull-ups | C6 | 115 kg |
 | Dips | C7 | 120 kg |
 
-![Screen MAX](img/MAXs_sheet.png)
+![MAXs section](images/maxs.png)
 
-**💡 Important:** 
+**💡 Important:**
+
 - For Pull-ups and Dips, enter the **total weight** (your bodyweight + usual added weight)
 - If you don't know your MAXs, estimate them conservatively
 
 ### Step 2: Fill in Your Bodyweight
 
-Bodyweight is separate from MAXs and is filled in for each session. Remember to fill in your weight belt weight in A10.
+Bodyweight is separate from MAXs and is filled in for each session. Also enter the weight of your belt in A10.
 
 #### Bodyweight per Session (Column A)
 
 In column **A** (cells A12, A22, A32, A42, A52), enter your bodyweight for each training day:
 
 | Session | Cell | Example |
-|---------|------|---------|
+| --- | --- | --- |
 | Monday | A12 | 73.5 kg |
 | Tuesday | A22 | 73.9 kg |
 | Thursday | A32 | 73.2 kg |
 | Friday | A42 | 73.5 kg |
 | Sunday | A52 | 74.2 kg |
 
-![Screen Body](img/body_sheet.png)
+![Bodyweight cells of the sessions](images/bodyweight.png)
 
 **💡 Important Notes:**
+
 - **Not mandatory to fill in all sessions**: The system calculates the average only on filled cells. If you only fill in 3 bodyweights out of 5 sessions, the average will be calculated on these 3 values.
 - **No scale available?** You can enter an **estimate** of your daily weight. Even if it's less precise, it's more than adequate for Pull-ups and Dips calculations.
 
@@ -75,13 +80,14 @@ In column **A** (cells A12, A22, A32, A42, A52), enter your bodyweight for each 
 - Ignores empty cells
 
 **Example:**
-```
+
+```text
 A12: 73.5 kg
 A22: (empty - missed session)
 A32: 73.2 kg
 A42: 73.5 kg
 A52: (empty - not weighed)
-→ Average Bodyweight (C2) = (73.5 + 73.2 + 73.5) / 3 = 73.4 kg
+→ Average bodyweight (A60) = (73.5 + 73.2 + 73.5) / 3 = 73.4 kg
 ```
 
 ---
@@ -95,7 +101,7 @@ A52: (empty - not weighed)
 It's a scale from **5 to 10** that measures the difficulty of a set:
 
 | RPE | Meaning | Reps in Reserve (RIR) |
-|-----|---------|------------------------|
+| --- | --- | --- |
 | 10 | Complete failure | 0 RIR |
 | 9.5 | Almost failure | 0.5 RIR |
 | 9 | 1 more rep possible | 1 RIR |
@@ -111,14 +117,16 @@ It's a scale from **5 to 10** that measures the difficulty of a set:
 ### How Do We Use the RPE Chart?
 
 The RPE Chart is located at the bottom of the sheet. It allows you to calculate your e1RM based on:
+
 - The **weight** used
 - The **number of repetitions** performed
 - The **RPE** felt
 
 **Example:**
+
 - You do 3 reps at 110 kg with an RPE of 8
-- In the RPE Chart: 3 reps @ RPE 8 = 83.7%
-- Your e1RM = 110 / 0.837 = **131.4 kg**
+- In the RPE Chart: 3 reps @ RPE 8 = 86.3%
+- Your e1RM = 110 / 0.863 = **127.5 kg**
 
 ⚠️ **You don't need to do this calculation manually, the sheet does it automatically!**
 
@@ -133,7 +141,7 @@ For each exercise, here are the important columns:
 #### Columns to Fill BEFORE the Session (Planning)
 
 | Column | Name | Description | Example |
-|--------|------|-------------|---------|
+| --- | --- | --- | --- |
 | **B** | Label | Exercise type (sq/bn/dl/pu/dp/ac) | sq |
 | **C** | Day | Day of the week (optional, just for visual reference) | Mon |
 | **D** | Exercises | Exercise name | Squat Volume |
@@ -146,14 +154,14 @@ For each exercise, here are the important columns:
 #### Columns Calculated Automatically (Visible)
 
 | Column | Name | Description |
-|--------|------|-------------|
+| --- | --- | --- |
 | **H** | Eload | Planned load calculated according to your MAXs and RPE |
 | **M** | e1RM | e1RM calculated after the session |
 
 #### Columns to Fill AFTER the Session (Results)
 
 | Column | Name | Description | Example |
-|--------|------|-------------|---------|
+| --- | --- | --- | --- |
 | **J** | Reload | Actual weight used | 110 kg |
 | **K** | Actual RPE | RPE felt after the set | 6 |
 
@@ -162,7 +170,7 @@ For each exercise, here are the important columns:
 #### Columns Calculated Automatically (Not Visible)
 
 | Column | Name | Description |
-|--------|------|-------------|
+| --- | --- | --- |
 | **N** | Fatigue Index | Difference between Actual RPE - Planned RPE |
 | **I** | Theoretical Intensity | Planned effort intensity |
 | **L** | Actual Intensity | Performed effort intensity |
@@ -171,29 +179,29 @@ For each exercise, here are the important columns:
 ### Labels (Column B)
 
 | Label | Meaning | Use |
-|-------|---------|-----|
+| --- | --- | --- |
 | **sq** | Squat | Main squat movements |
 | **bn** | Bench | Main bench press movements |
 | **dl** | Deadlift | Main deadlift movements |
 | **pu** | Pull-ups | Weighted pull-ups |
 | **dp** | Dips | Weighted dips |
-| **ac** | Accessories | Assistance exercises (not included in maxs --> no Eload) |
+| **ac** | Accessories | Assistance exercises (not included in the MAXs, so no Eload) |
 
 **⚠️ Important:** When you add an exercise to a session, it's up to you to choose which label the exercise belongs to.
 
-![Label Choice](img/labsheet.png)
+![Choice of the exercise label](images/labels.png)
 
-The **Eload** (column H) is calculated **only** for labels **sq, bn, dl, pu, dp**. Accessory exercises (ac) don't have a calculated Eload. The goal is to track Power movements; if you add accessories, the e1RM calculation in column M will be done but there will be no tracking.
+The **Eload** (column H) is calculated **only** for labels **sq, bn, dl, pu, dp**. Accessory exercises (ac) don't have a calculated Eload. The goal is to track the main lifts: accessory exercises still get an e1RM in column M, but it is not tracked from week to week.
 
 ### Complete Filling Example
 
 **Before the session (planning):**
 
-![Session Screen](img/SeanceSheet.png)
+![Planned session](images/session-planned.png)
 
 **After the session (results):**
 
-![Completed Session Screen](img/SeanceFaite.png)
+![Completed session](images/session-completed.png)
 
 ---
 
@@ -206,11 +214,13 @@ For **Pull-ups (pu)** and **Dips (dp)**, the system takes into account your body
 ### How to Fill?
 
 **📝 IMPORTANT RULE:**
+
 - In the **Reload (J)** column: Note **ONLY the added weight** (weight on the belt)
 - The system will **automatically add your bodyweight + belt weight** to calculate the e1RM
 
 **Pull-ups Example:**
-```
+
+```text
 Bodyweight of the day (A12): 73.5 kg
 Added weight on belt: 20 kg
 Belt weight: 0.6 kg (for example)
@@ -221,6 +231,7 @@ Belt weight: 0.6 kg (for example)
 ### Why This Method?
 
 This allows you to:
+
 - ✅ Precisely track your absolute strength (body + added weight + belt)
 - ✅ Automatically adjust if your weight changes
 - ✅ Easily see the added weight to put on the belt (Eload displays just the net added weight)
@@ -228,18 +239,20 @@ This allows you to:
 ### Complete Example
 
 **Planning:**
+
 - Pull-up total MAX (C6): 115 kg
 - Planned session: 3×3 @ RPE 8.5 (87.8% = 101 kg total)
 - Your weight today (A12): 73.5 kg
-- **Calculated Eload: 27.5 kg** (101 - 73.5 - 0.6 = 26.9 kg added weight --> Rounded to 2.5 to match gym weights)
+- **Calculated Eload: 27.5 kg** (101 - 73.5 - 0.6 = 26.9 kg of added weight, rounded to the nearest 2.5 kg to match gym plates)
 
 **Execution:**
+
 - You put 27.5 kg on the belt
 - Felt RPE: 8
 - **Reload to note: 27.5** (just the added weight)
-- **Calculated e1RM: 117.7 kg** (based on 26.25 + 73.5 + 0.6)
+- **Calculated e1RM: 117.7 kg** (based on 27.5 + 73.5 + 0.6 = 101.6 kg)
 
-![Pull-up Example](img/tracSheet.png)
+![Weighted pull-up example](images/pull-up-example.png)
 
 ---
 
@@ -250,12 +263,14 @@ This allows you to:
 **Where to find it?** "Average e1rm" section at the top right of each week sheet (columns G and H)
 
 **What it is:**
+
 - The **average** of all calculated e1RMs in the week for each exercise
 - **Automatically ignores** unfilled sessions or unperformed exercises
 - **Automatically** becomes the reference (MAX) for the following week
 
 **Example:**
-```
+
+```text
 Week 1:
 - Squat session 1: e1RM = 135 kg
 - Squat session 2: e1RM = 140 kg
@@ -266,6 +281,7 @@ This value will AUTOMATICALLY be used as MAX (C3) for Week 2
 ```
 
 **💡 Major Advantage:**
+
 - **No need to manually copy-paste** values from one week to another
 - MAXs update automatically based on your actual performance
 - **Conservative** approach: the average smooths out variations and avoids overestimating your abilities
@@ -278,25 +294,27 @@ This value will AUTOMATICALLY be used as MAX (C3) for Week 2
 The difference between this week's average e1RM and the previous week's reference MAX.
 Green if positive (Improvement) and red otherwise.
 
-![Progress Section](img/progressSheet.png)
+![Progress section](images/progress.png)
 
 **Formula:** `Average e1RM - Reference MAX`
 
 **Example:**
-```
+
+```text
 Squat MAX last week (C3): 135 kg
 Average e1RM this week: 137.5 kg
 → Progress: +2.5 kg (+1.85%)
 ```
 
 **Interpretation:**
+
 - **Positive**: You're progressing ✅
 - **Negative**: You're regressing (fatigue, deload, or bad week)
 - **~0**: Maintaining level
 
-⚠️ Only rely on it once the week is finished. Indeed, at the beginning of the week, you have announced MAXs of 130 kg for squat for example, but you haven't performed any squat exercise in your week yet. It then shows in the Progress section that you're at -130kg on squat which is absurd ;).
+⚠️ Only rely on it once the week is over. At the start of the week, your MAXs are set (for example 130 kg for the squat) but no squat has been logged yet, so the Progress section shows -130 kg for the squat, which is meaningless.
 
-![Absurd Example](img/absSheet.png)
+![Progress section at the start of the week](images/progress-start-of-week.png)
 
 ### 6.3 Fatigue Index
 
@@ -308,21 +326,23 @@ Graph at the bottom right of the sheet called "Fatigue Index".
 **Interpretation:**
 
 | Index | Meaning | Action |
-|-------|---------|--------|
+| --- | --- | --- |
 | **< -1** | Excellent form | You can increase intensity |
 | **-0.5 to +0.5** | Normal | Continue as planned |
 | **+0.5 to +1** | Slight fatigue | Monitor your recovery |
 | **> +1** | Significant fatigue | Consider a deload or more rest |
 
 **Example:**
-```
+
+```text
 Planned RPE: 7
 Actual RPE: 8.5
 → Index: +1.5 (significant fatigue)
 ```
 
 **Weekly Average Index:**
-```
+
+```text
 Average of all your fatigue indices for the week
 Example: -0.25 = Good overall form
 ```
@@ -338,7 +358,8 @@ The **tonnage** represents the total load volume lifted in the week for each mai
 **Formula:** `Load × Repetitions × Sets` (for all exercises of the same type)
 
 **Example:**
-```
+
+```text
 Squat session 1: 3 × 4 @ 110 kg = 1,320 kg
 Squat session 2: 2 × 8 @ 100 kg = 1,600 kg
 Squat session 3: 3 × 3 @ 120 kg = 1,080 kg
@@ -348,13 +369,14 @@ Squat session 3: 3 × 3 @ 120 kg = 1,080 kg
 **Interpretation:**
 
 | Observation | Meaning | Action |
-|-------------|---------|--------|
+| --- | --- | --- |
 | **Progressive increase** | Training volume increasing | Normal in progression |
 | **Stagnation** | Stable volume | May indicate a plateau |
 | **Sharp decrease** | Deload or recovery week | Normal if planned |
 | **Sharp increase** | Sudden volume increase | Beware of overload risk |
 
 **Use:**
+
 - Track the evolution of your training volume
 - Compare volume between movements (Squat vs Bench vs Deadlift)
 - Detect overload or underload weeks
@@ -373,7 +395,8 @@ The total number of repetitions performed in the week for each main movement (Sq
 **Formula:** `Sum of all repetitions` (for all exercises of the same type)
 
 **Example:**
-```
+
+```text
 Squat session 1: 3 × 4 = 12 reps
 Squat session 2: 2 × 8 = 16 reps
 Squat session 3: 3 × 3 = 9 reps
@@ -383,13 +406,14 @@ Squat session 3: 3 × 3 = 9 reps
 **Interpretation:**
 
 | Range | Training Type | Goal |
-|-------|---------------|------|
+| --- | --- | --- |
 | **< 20 reps** | Low volume, high intensity | Maximum strength |
 | **20-40 reps** | Moderate volume | Strength and hypertrophy |
 | **40-60 reps** | High volume | Hypertrophy |
 | **> 60 reps** | Very high volume | Strength endurance |
 
 **Use:**
+
 - Verify that your repetition volume is consistent with your goals
 - Balance volume between the 3 main movements
 - Avoid imbalances (e.g., 60 reps of Bench vs 20 reps of Squat)
@@ -397,6 +421,7 @@ Squat session 3: 3 × 3 = 9 reps
 
 **💡 Tip:**
 For powerlifting, a balanced ratio could be:
+
 - **Squat: 30-50 reps/week**
 - **Bench: 25-45 reps/week**
 - **Deadlift: 15-30 reps/week** (often lower volume as it's more taxing)
@@ -408,6 +433,7 @@ For powerlifting, a balanced ratio could be:
 ### 7.1 Sheet Structure
 
 The file contains **10 week sheets** named:
+
 - Week 1
 - Week 2
 - Week 3
@@ -416,7 +442,7 @@ The file contains **10 week sheets** named:
 
 ### 7.2 "Suivi e1RM" Sheet
 
-**⚠️ CRITICAL RULE: DO NOT RENAME THE WEEK SHEETS**
+⚠️ **Critical rule:** do not rename the week sheets.
 
 The "Suivi e1RM" sheet automatically retrieves data from each week via reference formulas.
 
@@ -427,12 +453,13 @@ The "Suivi e1RM" sheet automatically retrieves data from each week via reference
 #### Progress Table (Hidden but visible if you move the graphs)
 
 | Week | Date | Squat | Bench | Deadlift | Pull-ups | Dips |
-|------|------|-------|-------|----------|----------|------|
+| --- | --- | --- | --- | --- | --- | --- |
 | 1 | 01/06/26 | 135 | 90 | 190 | 100 | 85 |
 | 2 | 01/13/26 | 137.5 | 92 | 197.5 | 103 | 87.5 |
 | ... | ... | ... | ... | ... | ... | ... |
 
 #### "Total SBD" Graph
+
 - **Squat MAX**: Average Squat e1RM for the week
 - **Bench MAX**: Average Bench e1RM for the week
 - **Deadlift MAX**: Average Deadlift e1RM for the week
@@ -440,10 +467,12 @@ The "Suivi e1RM" sheet automatically retrieves data from each week via reference
 - Allows tracking your overall powerlifting total
 
 #### "Pull-ups & Dips MAX" Graph
+
 - **Pull-ups MAX**: Average Pull-ups e1RM for the week (total weight)
 - **Dips MAX**: Average Dips e1RM for the week (total weight)
 
 #### Weight Tracking
+
 - **Average Bodyweight**: Weekly average bodyweight
 - Evolution graph over 10 weeks
 
@@ -460,7 +489,7 @@ The "Suivi e1RM" sheet automatically retrieves data from each week via reference
 
 ### ✅ TO DO
 
-- ✅ Fill in your bodyweight and weight belt (column A) at the start of each session
+- ✅ Fill in your bodyweight (column A) at the start of each session, and your belt weight in A10
 - ✅ Use correct labels for exercises (sq/bn/dl/pu/dp/ac)
 - ✅ Note the actual RPE (column K) after each important set as well as the Reload (column J)
 - ✅ For pull-ups/dips: note **only the added weight** in Reload (column J)
@@ -486,6 +515,7 @@ The system works in a **completely automatic** way:
 4. You have **nothing to copy-paste** manually
 
 **Advantage:**
+
 - **Conservative** approach: using the average of actual performances avoids overestimating your abilities
 - **Time-saving**: no manual manipulation
 - **Consistency**: ensures your loads are always based on your recent performances
@@ -501,6 +531,7 @@ The system works in a **completely automatic** way:
 ### Q2: My calculated e1RM seems too high/low
 
 **A:** Check that:
+
 - You noted the correct RPE
 - The weight in Reload is correct
 - For pu/dp: you noted only the added weight (not the total) and filled in the session bodyweight cell
@@ -516,6 +547,7 @@ The system works in a **completely automatic** way:
 ### Q5: The graphs aren't updating
 
 **A:** Check that:
+
 - Week sheets haven't been renamed
 - Formulas in "Suivi e1RM" point to the correct cells
 - Data is properly filled in the week sheets
@@ -535,6 +567,7 @@ The system works in a **completely automatic** way:
 ### Q9: Why use the average rather than the best e1RM of the week?
 
 **A:** The average approach is more **conservative** and **realistic**:
+
 - Smooths out day-to-day variations (sleep, stress, nutrition)
 - Avoids basing your loads on an isolated exceptional performance
 - Ensures sustainable and safe progression
@@ -552,9 +585,10 @@ The system works in a **completely automatic** way:
 ## 📧 Support
 
 For any questions or suggestions:
-- 📧 Email : romainben31@gmail.com
-- 🔗 LinkedIn : [romainben](https://www.linkedin.com/in/romainben/)
+
+- 📧 Email: [romainben31@gmail.com](mailto:romainben31@gmail.com)
+- 🔗 LinkedIn: [romainben](https://www.linkedin.com/in/romainben/)
 
 ---
 
-**Happy training! 💪**
+Happy training! 💪

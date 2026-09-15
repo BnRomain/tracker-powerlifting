@@ -1,0 +1,48 @@
+name: Feature request
+description: Suggest an improvement or a new feature.
+title: "[Feature]: "
+labels: ["enhancement"]
+body:
+  - type: dropdown
+    id: component
+    attributes:
+      label: Component
+      options:
+        - "Google Sheets template"
+        - "Documentation (README, user guides, wiki)"
+        - "CI / GitHub Actions"
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem or motivation
+      description: What problem would this feature solve, or what would it make possible?
+    validations:
+      required: true
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: Proposed solution
+      description: Describe the change you would like, for example a new metric, chart, exercise label or export option. Formulas and mockups are welcome.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: lifters
+    attributes:
+      label: Target lifters
+      multiple: true
+      options:
+        - "Beginner"
+        - "Intermediate"
+        - "Advanced"
+        - "All levels"
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: Other approaches you have thought about, if any.

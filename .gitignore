@@ -1,0 +1,10 @@
+# Documentation tools
+node_modules/
+.lycheecache
+
+# OS and editors
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/

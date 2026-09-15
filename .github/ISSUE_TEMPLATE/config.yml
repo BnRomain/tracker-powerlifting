@@ -1,5 +1,11 @@
 blank_issues_enabled: false
 contact_links:
-  - name: 💬 Discussions
-    url: https://github.com/BnRomain/PowerLiftingTracker/discussions
-    about: Ask questions or share ideas
+  - name: Report a security vulnerability
+    url: https://github.com/BnRomain/tracker-powerlifting/security/advisories/new
+    about: Please report vulnerabilities privately instead of opening a public issue.
+  - name: Questions and ideas (Discussions)
+    url: https://github.com/BnRomain/tracker-powerlifting/discussions
+    about: Ask how to use the tracker, share your results or discuss an idea.
+  - name: Documentation (wiki)
+    url: https://github.com/BnRomain/tracker-powerlifting/wiki
+    about: How the tracker works, getting started and CI.

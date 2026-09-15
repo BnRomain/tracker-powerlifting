@@ -1,318 +1,241 @@
 # 🏋️ PowerLift Tracker
 
+[![Documentation](https://github.com/BnRomain/tracker-powerlifting/actions/workflows/docs.yml/badge.svg)](https://github.com/BnRomain/tracker-powerlifting/actions/workflows/docs.yml)
+[![CodeQL](https://github.com/BnRomain/tracker-powerlifting/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/BnRomain/tracker-powerlifting/actions/workflows/github-code-scanning/codeql)
+[![Release](https://img.shields.io/github/v/release/BnRomain/tracker-powerlifting?sort=semver)](https://github.com/BnRomain/tracker-powerlifting/releases)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Google Sheets](https://img.shields.io/badge/Google%20Sheets-34A853?logo=google-sheets&logoColor=white)](https://www.google.com/sheets/about/)
-[![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg)](Contributing.md)
+[![Google Sheets template](https://img.shields.io/badge/Google%20Sheets-template-34A853?logo=googlesheets&logoColor=white)](https://docs.google.com/spreadsheets/d/1cMEQfgsgYV3C5RC8sq0Xvccz4UgO5aT8dhn19qVybdU/edit?usp=sharing)
 
-An intelligent powerlifting tracking system built on Google Sheets, featuring automated e1RM calculations, progressive load management, and fatigue analysis.
+A powerlifting tracker built on **Google Sheets**. It estimates your e1RM from the RPE chart, plans your loads from it, updates your reference MAXs every week from your actual performance and measures your accumulated fatigue, over a 10-week block.
 
-[📖 User Guide (FR)](Guide_Utilisation_Fr.md) • [📖 User Guide (EN)](User_Guide_EN.md) • [🔗 Get the Template](https://docs.google.com/spreadsheets/d/1cMEQfgsgYV3C5RC8sq0Xvccz4UgO5aT8dhn19qVybdU/edit?usp=sharing) • [🐛 Report Bug](https://github.com/BnRomain/PowerLiftingTracker/issues)
-
----
+**[Get the template](https://docs.google.com/spreadsheets/d/1cMEQfgsgYV3C5RC8sq0Xvccz4UgO5aT8dhn19qVybdU/edit?usp=sharing)** · [User guide](docs/user-guide.md) · [Guide d'utilisation (FR)](docs/user-guide-fr.md) · [Wiki](https://github.com/BnRomain/tracker-powerlifting/wiki)
 
 ## 📸 Preview
 
-![Dashboard Overview](img/Dashboard.png)
-
----
+![Week sheet with the MAXs, the average e1RM, the sessions and the weekly charts](docs/images/dashboard.png)
 
 ## 🎯 The Problem
 
 As a powerlifter, I needed a tool to:
-- **Plan sessions** with precision (loads, reps, RPE)
-- **Track progression** on main movements (Squat, Bench Press, Deadlift)
-- **Auto-adjust loads** based on actual performance
-- **Detect accumulated fatigue** to optimize recovery
 
-Existing apps lacked customization and didn't account for technical aspects like bodyweight for weighted exercises (pull-ups, dips).
+- **plan sessions** precisely (loads, reps, RPE);
+- **track progression** on the main lifts (squat, bench press, deadlift);
+- **adjust loads automatically** from actual performance;
+- **detect accumulated fatigue** to manage recovery.
 
----
+Existing apps lacked customization and did not account for details such as the bodyweight in weighted pull-ups and dips.
 
-## ✨ Key Features
+## ✨ Features
 
-### 📊 Automatic e1RM Calculation
-- Based on **RPE Chart** (Rate of Perceived Exertion)
-- Real-time calculation using: load, reps, and declared RPE
-- Special handling for bodyweight exercises (Pull-ups, Dips) including bodyweight
+### 📊 e1RM from the RPE chart
 
-### 🎯 Intelligent Load Planning
-- Automatic **Eload** (planned load) calculation based on e1RM percentage
-- Weekly reference adjustment based on actual performance
-- Automatic rounding to 2.5 kg increments (Gym plate standard)
+- Estimated one-rep max (**e1RM**) computed from the load, the reps and the RPE of each set, with the RPE chart
+- Weighted pull-ups and dips include the bodyweight and the belt weight
 
-### 📈 Progression Tracking
-- **Weekly average e1RM** for each main movement
-- Week-to-week progress calculation (in kg and %)
-- Total volume tracking (load × reps) per movement
-- Total rep count per exercise
+### 🎯 Load planning
 
-### 🔥 Fatigue Index
-- Automatic calculation: `Actual RPE - Planned RPE`
-- Weekly average to detect overtraining
-- Visual indicators:
-  - **Positive**: Accumulated fatigue
-  - **Negative**: Good form
-  - **~0**: According to plan
+- Planned load (**Eload**) computed from your reference MAX and the percentage of the RPE chart
+- Rounded to the nearest 2.5 kg, to match gym plates
+- For pull-ups and dips, the Eload only shows the weight to hang on the belt
 
-### ⚖️ Bodyweight Management
-- Daily bodyweight tracking per session
-- Automatic weekly average bodyweight calculation
-- Integration in e1RM calculations for weighted exercises
-- Smart display: only added weight shown, but calculation includes total weight
+### 📈 Progression tracking
 
-### 📉 Data Visualization
-- e1RM evolution graphs over multiple weeks
-- Fatigue index histogram per exercise
-- Bodyweight evolution tracking
-- Weekly tonnage and reps charts
+- Weekly average e1RM for each lift, which becomes the reference MAX of the next week: no copy-paste between weeks
+- Week-to-week progress, in kg and %
+- Total tonnage (load × reps) and total reps per lift
 
----
+### 🔥 Fatigue index
 
-## 🛠️ Technologies & Skills
+- `Actual RPE - Planned RPE` for every set, averaged over the week
+- **Positive**: accumulated fatigue; **negative**: good form; **around 0**: on plan
 
-### Advanced Google Sheets Formulas
-- **ArrayFormula**: Matrix calculations for conditional averages
-- **AVERAGEIF / AVERAGEIFS**: Averages with multiple criteria
-- **Nested IF**: Complex conditional logic (up to 6 levels)
-- **IFERROR**: Robust error handling (#N/A, division by zero)
-- **ISNUMBER**: Numeric data validation
+### ⚖️ Bodyweight
 
-### Data Management
-- Multi-sheet architecture: 1 week = 1 sheet
-- Cross-sheet referencing for longitudinal tracking
-- Dynamic handling of missing data (missed sessions)
+- Bodyweight logged at each session, with a weekly average that ignores empty cells
+- Used in the pull-up and dip calculations
 
-### Data Visualization
-- Column and line charts for trends
-- Conditional formatting for visual indicators
-- Clean and readable design
+### 📉 Charts
 
----
+- e1RM of the squat, bench press and deadlift, and SBD total over the weeks
+- e1RM of the pull-ups and dips, and bodyweight over the weeks
+- Weekly tonnage, reps and fatigue index
 
-## 📋 Project Structure
-```
-PowerLift Tracker/
+## 🛠️ How It Works
+
+The tracker only uses built-in Google Sheets formulas (`ARRAYFORMULA`, `AVERAGEIF`, nested `IF`, `IFERROR`, `ISNUMBER`), conditional formatting and charts.
+
+### Spreadsheet structure
+
+```text
+PowerLift Tracker
 │
-├── Week Sheets (1-10)
-│   ├── Week Info
-│   │   ├── Reference MAXs (Squat, Bench, Deadlift, Pull-ups, Dips)
+├── Week sheets (1 to 10)
+│   ├── Week info
+│   │   ├── Reference MAXs (squat, bench, deadlift, pull-ups, dips)
 │   │   ├── Average bodyweight
-│   │   └── Calculated average e1RMs
+│   │   └── Average e1RM and progress
 │   │
-│   ├── Session Planning (Mon, Tue, Thu, Fri, Sun)
-│   │   ├── Exercise label
-│   │   ├── Sets × Reps
-│   │   ├── Planned RPE / Actual RPE
-│   │   ├── Eload (planned load)
-│   │   ├── Reload (actual load used)
-│   │   ├── Calculated e1RM
+│   ├── Sessions (Mon, Tue, Thu, Fri, Sun)
+│   │   ├── Exercise label and name
+│   │   ├── Sets × reps
+│   │   ├── Planned RPE / actual RPE
+│   │   ├── Eload (planned load) / Reload (actual load)
+│   │   ├── e1RM
 │   │   └── Fatigue index
 │   │
-│   ├── Weekly Statistics
-│   │   ├── Total volume per movement
-│   │   ├── Total reps
-│   │   └── Average fatigue index
-│   │
 │   └── Charts
-│       ├── e1RM evolution
-│       ├── Fatigue index
-│       ├── Tonnage/Week
-│       └── Reps/Week
+│       ├── Tonnage per week
+│       ├── Reps per week
+│       └── Fatigue index
 │
-└── "Suivi e1RM" Sheet
-    └── Multi-week progression
-        ├── Week | Date
-        ├── Squat e1RM | Bench e1RM | Deadlift e1RM
-        ├── Pull-ups e1RM | Dips e1RM
-        ├── Total SBD chart
-        ├── Pull-ups & Dips chart
-        └── Bodyweight tracking chart
+└── "Suivi e1RM" sheet (multi-week tracking)
+    ├── Week | Date | squat, bench, deadlift, pull-ups and dips e1RM
+    ├── SBD total chart
+    ├── Pull-ups and dips chart
+    └── Bodyweight chart
 ```
 
----
+### Key formulas
 
-## 🔧 Key Formulas
+#### e1RM, with the bodyweight for pull-ups and dips
 
-### e1RM Calculation with Bodyweight Management
 ```excel
 =IF(OR(B12="pu",B12="dp"),((J12+A12)*100)/L12,(J12*100)/L12)
 ```
-- If Pull-up or Dips: adds bodyweight and weigth belt before calculation
-- Otherwise: standard calculation with load only
 
-### Weekly Average e1RM (Ignores Empty Cells)
+- Divides the actual load (Reload, column J) by the actual intensity given by the RPE chart (column L).
+- For pull-ups (`pu`) and dips (`dp`), the bodyweight of the session (column A) is added to the load. The template also adds the belt weight (cell A10), left out here for readability.
+
+#### Weekly average e1RM, ignoring empty cells
+
 ```excel
 =ROUND(ArrayFormula(IFERROR(AVERAGE(IF($B$11:$B$57="sq",
 IF(ISNUMBER($M$11:$M$57),$M$11:$M$57))),"")),1)
 ```
-- Filters by exercise label
-- Ignores #N/A and empty cells
-- Rounds to 1 decimal
 
-### Fatigue Index
+- Filters the sets by exercise label, ignores `#N/A` and empty cells, and rounds to 1 decimal.
+
+#### Fatigue index
+
 ```excel
 =IF(AND(K11<>"",ISNUMBER(K11)),K11-E11,"")
 ```
-- Difference between actual RPE and planned RPE
-- Handles empty cells
 
----
+- Difference between the actual RPE and the planned RPE, left empty until the set is logged.
 
 ## 📊 Usage Example
 
-**Monday - Deadlift Session**
-1. My reference Deadlift e1RM: **190 kg**
-2. Planned session: Sumo 2×8 @ RPE 7 (73.9% = **140 kg**)
-3. I load **140 kg** (Eload calculated automatically)
-4. I perform **2×8 @ 135 kg** (I went a bit lighter)
-5. Actual RPE felt: **7** (according to plan)
-6. Calculated e1RM: **182.6 kg** (based on 135kg × 8 reps @ RPE 7)
-7. Fatigue index: **0** (7 - 7 = according to plan)
+Monday, deadlift session:
 
-**End of Week**
-- Calculated average Deadlift e1RM: **187.3 kg** (average of 2 DL sessions)
-- This value automatically becomes the reference for next week
+1. Reference deadlift e1RM: **190 kg**
+2. Planned set: sumo deadlift 2 × 7 @ RPE 7, that is 73.9 % of the e1RM: the Eload is **140 kg**
+3. Performed: 2 × 7 @ **135 kg**, a bit lighter than planned
+4. Actual RPE: **7**, as planned
+5. e1RM: **182.7 kg** (135 kg / 0.739)
+6. Fatigue index: **0** (7 - 7)
 
----
+At the end of the week, the average of the two deadlift sessions (for example **187.3 kg**) automatically becomes the reference MAX of the next week.
 
 ## 🚀 Getting Started
 
-### Prerequisites
-- Google account
-- Basic understanding of powerlifting and RPE
+Prerequisites: a Google account and a basic understanding of powerlifting and RPE.
 
-### Installation
-
-1. **Access the template**: [Google Sheets Template Link](https://docs.google.com/spreadsheets/d/1cMEQfgsgYV3C5RC8sq0Xvccz4UgO5aT8dhn19qVybdU/edit?usp=sharing)
+1. **Open the template**: [Google Sheets template](https://docs.google.com/spreadsheets/d/1cMEQfgsgYV3C5RC8sq0Xvccz4UgO5aT8dhn19qVybdU/edit?usp=sharing)
 2. **Make a copy**: File > Make a copy
-3. **Fill in your current MAXs** in the "MAXs" section (cells C3-C7)
-4. **Enter your bodyweight** in column A for each session
-5. **Plan your week** by filling in sets, reps, planned RPE
-6. **Record your performance**: load used, actual RPE
-7. **Analyze**: e1RM, progression, fatigue index are calculated automatically
+3. **Fill in your current MAXs** in the "MAXs" section (cells C3 to C7)
+4. **Enter your bodyweight** in column A for each session, and your belt weight in cell A10
+5. **Plan your week**: label, exercise, sets, reps and planned RPE
+6. **Log your sets**: actual load (Reload) and actual RPE
+7. **Analyze**: e1RM, progress and fatigue index are computed automatically
 
-### Quick Start Guide
-```
-Week 1 Setup:
-1. MAXs (C3-C7): Enter your current e1RMs
-2. Bodyweight (A12, A22, etc.): Enter daily weight
-3. Plan sessions: Label, exercise name, sets, reps, RPE
-4. After training: Fill Reload (J) and Actual RPE (K)
-5. Review: Check average e1RM and fatigue index
-
-Week 2+:
-→ MAXs automatically update from Week 1 average e1RMs
-→ Repeat the process!
-```
-
----
+From week 2, the MAXs are updated from the average e1RM of the previous week: just repeat steps 5 to 7. The [user guide](docs/user-guide.md) details every column and rule.
 
 ## 📖 Documentation
 
-- **[Complete User Guide (French)](Guide_Utilisation_Fr.md)**: Detailed instructions in French
-- **[Complete User Guide (English)](User_Guide_EN.md)**: Detailed instructions in English
-- **[Contributing Guidelines](Contributing.md)**: How to contribute to this project
-- **[Changelog](Changelog.md)**: Version history and updates
+- **[User guide (English)](docs/user-guide.md)**: setup, RPE chart, sessions, bodyweight exercises, analysis and FAQ
+- **[Guide d'utilisation (French)](docs/user-guide-fr.md)**: the same guide in French
+- **[Wiki](https://github.com/BnRomain/tracker-powerlifting/wiki)**: project overview, how it works and CI/CD
+- **[Changelog](CHANGELOG.md)**: version history
 
----
+## 🗂️ Repository Structure
 
-## 🎓 Learning Resources
+```text
+tracker-powerlifting/
+├── docs/
+│   ├── user-guide.md         user guide (English)
+│   ├── user-guide-fr.md      user guide (French)
+│   └── images/               screenshots of the template
+├── .github/                  workflows, issue and pull request templates, Dependabot
+├── .markdownlint-cli2.yaml   Markdown lint configuration
+├── CHANGELOG.md              version history
+├── CITATION.cff              citation metadata
+├── CODE_OF_CONDUCT.md        code of conduct
+├── CONTRIBUTING.md           contributing guide
+├── LICENSE                   MIT License
+└── SECURITY.md               security policy
+```
 
-### Understanding RPE
-- [RPE in Powerlifting - Explained](https://www.strongerbyscience.com/autoregulation/)
+The spreadsheet itself lives in Google Drive: the repository holds its documentation and the project automation.
 
-### Powerlifting Programming
-- [Programming Principles](https://www.powerliftingtowin.com/powerlifting-programs/)
+## ✅ Quality and Automation
 
----
+On every pull request and every push to `main`, GitHub Actions runs:
 
-## 🤝 Contributing
+- **Documentation**: markdownlint on every Markdown file, then lychee checks that every link to a file, heading anchor and image resolves;
+- **Dependency review**: blocks a pull request that adds a vulnerable dependency;
+- **CodeQL**: security analysis of the GitHub Actions workflows.
 
-Contributions are welcome! Here's how you can help:
+The `main` branch is protected: every change goes through a pull request and can only be merged once these checks pass. Secret scanning with push protection blocks any committed credential.
 
-1. **Report bugs** via [GitHub Issues](https://github.com/BnRomain/PowerLiftingTracker/issues)
-2. **Suggest features** you'd like to see
-3. **Submit improvements** to formulas or layout
-4. **Translate** the guide to other languages
-5. **Share your results** and feedback
+Versions follow [Semantic Versioning](https://semver.org/) and are published as [GitHub releases](https://github.com/BnRomain/tracker-powerlifting/releases): see the [contributing guide](CONTRIBUTING.md#versioning-and-releases).
 
-See [Contributing.md](Contributing.md) for detailed guidelines.
-
----
+**Dependabot** monitors the GitHub Actions. Patch and minor updates are merged automatically once the required checks of `main` have passed. See also the [security policy](SECURITY.md).
 
 ## 📈 Roadmap
 
-### Current Version: 1.0
-- ✅ Core tracking functionality
-- ✅ Automatic e1RM calculations
+### Available
+
+- ✅ Session planning and logging
+- ✅ Automatic e1RM calculation
 - ✅ Fatigue index
 - ✅ 10-week progression tracking
-- ✅ Bodyweight exercise support
+- ✅ Weighted pull-ups and dips
 
-### Future Enhancements
-- [ ] Migration to React + Firebase web app
-- [ ] Progress predictor ("You'll reach X kg in Y weeks")
-- [ ] Comparison to strength standards (Beginner/Intermediate/Advanced/Elite)
-- [ ] Auto-suggest deload based on fatigue threshold
-- [ ] PDF export of weekly programs
+### Ideas
+
+- [ ] Migration to a React + Firebase web app
+- [ ] Progress predictor ("you will reach X kg in Y weeks")
+- [ ] Comparison with strength standards (beginner, intermediate, advanced, elite)
+- [ ] Deload suggestion based on a fatigue threshold
+- [ ] PDF export of the weekly program
 - [ ] Mobile application
-- [ ] Exercise video library integration
+- [ ] Exercise video library
 - [ ] Community leaderboards
 - [ ] AI-powered form analysis
 
----
+## 🎓 Learning Resources
 
-## 🏆 Success Stories
-
-Want to share your progress? [Submit your story!](https://github.com/BnRomain/PowerLiftingTracker/discussions)
-
----
-
-## 📊 Statistics
-
-- **10 weeks** of structured tracking
-- **5 main movements** monitored (Squat, Bench, Deadlift, Pull-ups, Dips)
-- **Automatic calculations** across 50+ formulas
-- **Zero manual data transfer** between weeks
-
----
+- [RPE and autoregulation explained](https://www.strongerbyscience.com/autoregulation/) (Stronger By Science)
+- [Powerlifting programs](https://www.powerliftingtowin.com/powerlifting-programs/) (Powerlifting to Win)
 
 ## 🙏 Acknowledgments
 
-- **RPE Chart** methodology based on research by Mike Tuchscherer
+- **RPE chart** methodology based on the work of Mike Tuchscherer
 - **Programming principles** inspired by Juggernaut Training Systems
-- Thanks to all beta testers who helped refine the system
+- Thanks to all the beta testers who helped refine the tracker
 
----
+## 🤝 Contributing
 
-## 📧 Contact & Support
+Contributions are welcome. Please read the [contributing guide](CONTRIBUTING.md) and the [code of conduct](CODE_OF_CONDUCT.md) before opening an issue or a pull request. Questions and training results are welcome in [Discussions](https://github.com/BnRomain/tracker-powerlifting/discussions), and security vulnerabilities must be reported privately, as described in the [security policy](SECURITY.md).
 
-**Creator**: Romain Ben  
-**Email**: romainben31@gmail.com  
-**LinkedIn**: [romainben](https://www.linkedin.com/in/romainben/)
-**GitHub**: [@BnRomain](https://github.com/BnRomain)
+## 📜 License
 
-For questions, suggestions, or collaboration:
-- 💬 [Open a Discussion](https://github.com/BnRomain/PowerLiftingTracker/discussions)
-- 🐛 [Report an Issue](https://github.com/BnRomain/PowerLiftingTracker/issues)
-- ✉️ Email me directly
+This project is released under the [MIT License](LICENSE).
 
----
+## 📚 Citation
 
-## ⭐ Show Your Support
+To cite this project, use the metadata in [`CITATION.cff`](CITATION.cff) or the "Cite this repository" button on GitHub.
 
-If this project helped you track your powerlifting progress, please consider:
-- ⭐ **Starring this repository**
-- 🔄 **Sharing it** with your training partners
-- 💬 **Leaving feedback** in Discussions
-- 🤝 **Contributing** improvements
+## 📧 Contact
 
----
-
-<div align="center">
-
-**Built with ❤️ for the powerlifting community**
-
-[Get Started](https://docs.google.com/spreadsheets/d/1cMEQfgsgYV3C5RC8sq0Xvccz4UgO5aT8dhn19qVybdU/edit?usp=sharing) • [Documentation](User_Guide_EN.md) • [Support](https://github.com/BnRomain/PowerLiftingTracker/discussions)
-
-</div>
+**Romain Ben**: [romainben31@gmail.com](mailto:romainben31@gmail.com) · [LinkedIn](https://www.linkedin.com/in/romainben/) · [GitHub](https://github.com/BnRomain)

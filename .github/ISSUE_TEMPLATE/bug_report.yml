@@ -1,0 +1,63 @@
+name: Bug report
+description: Report a wrong calculation, a broken formula or a problem in the documentation.
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report a bug.
+        Please do not report security vulnerabilities here: follow the [security policy](https://github.com/BnRomain/tracker-powerlifting/security/policy) instead.
+
+  - type: dropdown
+    id: component
+    attributes:
+      label: Component
+      options:
+        - "Week sheet (MAXs, Eload, e1RM, progress, fatigue index)"
+        - "\"Suivi e1RM\" sheet (multi-week tracking and charts)"
+        - "Documentation (README, user guides, wiki)"
+        - "CI / GitHub Actions"
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: What happened, and what did you expect to happen?
+    validations:
+      required: true
+
+  - type: textarea
+    id: location
+    attributes:
+      label: Where does it happen?
+      description: Week sheet, session, exercise label (sq, bn, dl, pu, dp, ac), cell and formula if applicable.
+      placeholder: |
+        Week 3, Monday session, row 12 (pu)
+        Cell M12: =IF(OR(B12="pu",B12="dp"),((J12+A12)*100)/L12,(J12*100)/L12)
+    validations:
+      required: true
+
+  - type: textarea
+    id: values
+    attributes:
+      label: Values entered
+      description: The values needed to reproduce the calculation (MAX, bodyweight, belt weight, sets, reps, planned and actual RPE, Reload).
+      placeholder: "MAX 115 kg, bodyweight 73.5 kg, belt 0.6 kg, 3x3 @ RPE 8.5, Reload 27.5 kg, actual RPE 8"
+
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Screenshots
+      description: Drag and drop screenshots of the sheet here, if possible.
+
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      description: Browser or Google Sheets app, spreadsheet locale (decimal comma or point) and when you copied the template.
+      placeholder: "Chrome 140, French locale, copied in September 2026"
+    validations:
+      required: true
