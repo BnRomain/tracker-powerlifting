@@ -1,0 +1,20 @@
+version: 2
+
+# The repository has no package manifest: the Google Sheets template lives in
+# Google Drive and the documentation tools run in CI through GitHub Actions.
+# The only tracked dependencies are therefore the GitHub Actions used by the
+# workflows.
+
+updates:
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 5
+    groups:
+      actions-patch-minor:
+        update-types:
+          - "patch"
+          - "minor"
+        patterns:
+          - "*"

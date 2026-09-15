@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+message: "If you use this project, please cite it using the metadata below."
+type: software
+title: "PowerLift Tracker: a powerlifting training tracker built on Google Sheets"
+abstract: >-
+  Google Sheets template to plan and track powerlifting training over a
+  10-week block: e1RM estimated from the RPE chart, planned loads rounded to
+  2.5 kg, reference MAXs updated every week from the actual performance,
+  fatigue index and bodyweight handling for weighted pull-ups and dips, with
+  user guides in English and French.
+authors:
+  - given-names: Romain
+    family-names: Ben
+version: 1.0.1
+license: MIT
+repository-code: "https://github.com/BnRomain/PowerLiftingTracker"
+url: "https://docs.google.com/spreadsheets/d/1cMEQfgsgYV3C5RC8sq0Xvccz4UgO5aT8dhn19qVybdU/edit?usp=sharing"
+keywords:
+  - powerlifting
+  - strength training
+  - RPE
+  - e1RM
+  - training log
+  - Google Sheets
